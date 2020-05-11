@@ -6,7 +6,7 @@ describe('<ListingCard />', () => {
   it('should render the icon correctly', () => {
     const iconPath = 'icon/path/image';
     const wrapper = shallow(<ListingCard icon={iconPath} title="" url="" />);
-    expect(wrapper.exists(`img[src="${iconPath}"]`)).toBe(true);
+    expect(wrapper.exists(`[src="${iconPath}"]`)).toBe(true);
   });
 
   it('should render the title correctly', () => {

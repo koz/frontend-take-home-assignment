@@ -6,6 +6,7 @@ import { media } from '../../styles/mediaQueries';
 
 const StyledCard = styled(Card)`
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   padding: 2.4rem 0.87rem;
@@ -38,6 +39,11 @@ const StyledButton = styled(Button)`
   }
 `;
 
+const StyledImg = styled.img`
+  width: 4rem;
+  height: 4rem;
+`;
+
 interface Props {
   icon: string;
   title: string;
@@ -46,7 +52,7 @@ interface Props {
 
 const ListingCard: React.FC<Props> = ({ icon, title }) => (
   <StyledCard>
-    <img src={icon} />
+    <StyledImg src={icon} />
     <StyledTitle>{title}</StyledTitle>
     <StyledButton>Start setup</StyledButton>
   </StyledCard>
