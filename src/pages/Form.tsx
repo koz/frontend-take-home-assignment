@@ -4,15 +4,7 @@ import { media } from '../styles/mediaQueries';
 import homeSVG from '../icons/home.svg';
 
 import SavingCard from '../components/SavingCard';
-import Header from '../components/Header';
-
-const StyledPageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #f4f8fa;
-  min-height: 100vh;
-`;
+import PageLayout from '../components/PageLayout';
 
 const StyledTitle = styled.h1`
   color: #1b31a8;
@@ -47,8 +39,7 @@ const StyledSavingCard = styled(SavingCard)`
 `;
 
 const Form = () => (
-  <StyledPageContainer>
-    <Header />
+  <PageLayout>
     <StyledTitle>
       Let&apos;s plan your <strong>saving goal</strong>
     </StyledTitle>
@@ -57,7 +48,7 @@ const Form = () => (
       iconAlt="Little house with dollar sign on the bottom left"
       title="Buy a house"
     />
-  </StyledPageContainer>
+  </PageLayout>
 );
 
 export default Form;
