@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { cards } from './constants';
+import { cards } from '../../utils/constants';
 import Listing from './index';
 import ListingCard from '../../components/ListingCard';
 
