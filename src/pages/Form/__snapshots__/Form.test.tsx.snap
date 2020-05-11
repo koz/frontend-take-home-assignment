@@ -11,6 +11,7 @@ exports[`<Form /> matches snapshot 1`] = `
   <Styled(SavingCard)
     iconAlt="Icon alt text"
     iconSrc={Object {}}
+    id="car"
     title="Buy a car"
   />
 </PageLayout>

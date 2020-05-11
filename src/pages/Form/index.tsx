@@ -42,12 +42,18 @@ const StyledSavingCard = styled(SavingCard)`
 const Form = () => {
   const { id } = useParams();
   const { title, icon } = cards.find(c => c.id === id) || {};
+
   return (
     <PageLayout>
       <StyledTitle>
         Let&apos;s plan your <strong>saving goal</strong>
       </StyledTitle>
-      <StyledSavingCard iconSrc={icon} iconAlt="Icon alt text" title={title} />
+      <StyledSavingCard
+        id={id}
+        iconSrc={icon}
+        iconAlt="Icon alt text"
+        title={title}
+      />
     </PageLayout>
   );
 };

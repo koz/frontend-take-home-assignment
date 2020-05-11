@@ -85,7 +85,7 @@ interface SavingCardProps {
   iconAlt: string;
   title: string;
   className?: string;
-  handleSubmit?: (e: React.MouseEvent) => void;
+  id: string;
 }
 
 const SavingCard: React.FC<SavingCardProps> = ({
@@ -93,15 +93,36 @@ const SavingCard: React.FC<SavingCardProps> = ({
   iconAlt,
   title,
   className,
-  handleSubmit
+  id
 }) => {
   const [moneyValue, setMoneyValue] = React.useState(25000);
   const today = new Date();
   const [month, setMonth] = React.useState(today.getMonth());
   const [year, setYear] = React.useState(today.getFullYear());
 
+  React.useEffect(() => {
+    const savedData = localStorage.getItem(id);
+    if (savedData) {
+      const { value, month, year } = JSON.parse(savedData);
+      setMoneyValue(value);
+      setMonth(month);
+      setYear(year);
+    }
+  }, [id]);
+
   const monthsToPay = monthsDiffFromToday(year, month);
   const monthlyPayment = getMonthlyPayment(monthsToPay, moneyValue);
+
+  const handleSubmitCallback = React.useCallback(() => {
+    localStorage.setItem(
+      id,
+      JSON.stringify({
+        value: moneyValue,
+        month,
+        year
+      })
+    );
+  }, [moneyValue, month, year, id]);
 
   return (
     <StyledCard className={className}>
@@ -135,7 +156,9 @@ const SavingCard: React.FC<SavingCardProps> = ({
           {months[month]} {year}.
         </strong>
       </StyledSummary>
-      <StyledButton onClick={handleSubmit}>Confirm</StyledButton>
+      <StyledButton data-testid="button" onClick={handleSubmitCallback}>
+        Confirm
+      </StyledButton>
     </StyledCard>
   );
 };
