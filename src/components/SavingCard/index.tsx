@@ -60,7 +60,9 @@ const StyledSummary = styled(CardSummary)`
 `;
 
 const StyledButton = styled(Button)`
+  min-width: 32.8rem;
   margin-top: 3.6rem;
+  padding: 1.6rem 0;
 
   ${media.desktop} {
     margin-top: 3.1rem;
