@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Card from '../Card';
 import Button from '../Button';
 import { media } from '../../styles/mediaQueries';
+import { Link } from 'react-router-dom';
 
 const StyledCard = styled(Card)`
   display: flex;
@@ -47,14 +48,16 @@ const StyledImg = styled.img`
 interface Props {
   icon: string;
   title: string;
-  url: string;
+  id: string;
 }
 
-const ListingCard: React.FC<Props> = ({ icon, title }) => (
+const ListingCard: React.FC<Props> = ({ icon, title, id }) => (
   <StyledCard>
     <StyledImg src={icon} />
     <StyledTitle>{title}</StyledTitle>
-    <StyledButton>Start setup</StyledButton>
+    <Link to={`/setup/${id}`}>
+      <StyledButton>Start setup</StyledButton>
+    </Link>
   </StyledCard>
 );
 

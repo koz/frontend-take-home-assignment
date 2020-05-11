@@ -4,7 +4,7 @@ import { media } from '../../styles/mediaQueries';
 
 import PageLayout from '../../components/PageLayout';
 import ListingCard from '../../components/ListingCard';
-import { cards } from './constants';
+import { cards } from '../../utils/constants';
 
 const StyledTitle = styled.h1`
   font-weight: 600;
@@ -55,7 +55,7 @@ const Listing = () => (
       <StyledTitle>Here’s your saving goals!</StyledTitle>
       <StyledCardList>
         {cards.map(item => (
-          <StyledCardContainer key={item.icon}>
+          <StyledCardContainer key={item.id}>
             <ListingCard {...item} />
           </StyledCardContainer>
         ))}

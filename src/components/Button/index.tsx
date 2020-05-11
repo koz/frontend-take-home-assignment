@@ -10,6 +10,7 @@ const StyledButton = styled.button`
   font-weight: 600;
   color: #fff;
   border-radius: 3.2rem;
+  cursor: pointer;
 
   ${media.desktop} {
     max-width: 40rem;

@@ -10,7 +10,7 @@ const App: React.FunctionComponent = () => {
       <GlobalStyle />
       <Router>
         <Switch>
-          <Route path="/setup">
+          <Route path="/setup/:id">
             <Form />
           </Route>
           <Route path="/">
