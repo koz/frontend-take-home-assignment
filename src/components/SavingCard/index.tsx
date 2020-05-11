@@ -71,6 +71,11 @@ const StyledButton = styled(Button)`
 const StyledCard = styled(Card)`
   display: flex;
   flex-direction: column;
+  padding: 2.8rem 2.4rem;
+
+  ${media.desktop} {
+    padding: 4rem 4rem 4.9rem;
+  }
 `;
 
 interface SavingCardProps {
