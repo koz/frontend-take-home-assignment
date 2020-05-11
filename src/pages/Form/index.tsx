@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '../../styles/mediaQueries';
-import homeSVG from '../../icons/home.svg';
 
 import SavingCard from '../../components/SavingCard';
 import PageLayout from '../../components/PageLayout';
 import { useParams } from 'react-router-dom';
+import { cards } from '../../utils/constants';
 
 const StyledTitle = styled.h1`
   color: #1b31a8;
@@ -41,16 +41,13 @@ const StyledSavingCard = styled(SavingCard)`
 
 const Form = () => {
   const { id } = useParams();
+  const { title, icon } = cards.find(c => c.id === id) || {};
   return (
     <PageLayout>
       <StyledTitle>
         Let&apos;s plan your <strong>saving goal</strong>
       </StyledTitle>
-      <StyledSavingCard
-        iconSrc={homeSVG}
-        iconAlt="Little house with dollar sign on the bottom left"
-        title="Buy a house"
-      />
+      <StyledSavingCard iconSrc={icon} iconAlt="Icon alt text" title={title} />
     </PageLayout>
   );
 };

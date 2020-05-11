@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> matches snapshot 1`] = `
+<PageLayout>
+  <styled.h1>
+    Let's plan your 
+    <strong>
+      saving goal
+    </strong>
+  </styled.h1>
+  <Styled(SavingCard)
+    iconAlt="Icon alt text"
+    iconSrc={Object {}}
+    title="Buy a car"
+  />
+</PageLayout>
+`;
